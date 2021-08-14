@@ -1,0 +1,38 @@
+#navbar{
+	background-color:#722196;
+
+}
+
+
+#titulo{
+	text-align: center;
+	margin-top: 70px;
+	font-size: 1.9em;
+}
+#seccion1{
+	width: 400px;
+	height: 300px;
+	font-size: .9em;
+	margin-top: 50px;
+	margin-left: 400px;
+	text-align: center;
+}
+
+#seccion2{
+	width: 400px;
+	height: 300px;
+	margin-top: 30px;
+	font-size: .9em;
+	
+}
+
+#seccion3{
+	width: 400px;
+	height: 300px;
+	margin-top: 30px;
+	font-size: .9em;
+}
+ img{
+	 margin-left: 400px;
+	 margin-top: 50px;
+ }
