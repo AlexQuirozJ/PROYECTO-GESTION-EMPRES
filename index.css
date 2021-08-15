@@ -1,5 +1,6 @@
 #navbar{
 	background-color:#722196;
+	font-family: 'Quicksand', sans-serif;
 
 }
 
@@ -12,34 +13,19 @@
     font-family: 'Quicksand', sans-serif;
 }
 #seccion1{
-	width: 400px;
+	width: 500px;
 	height: 300px;
 	font-size: 1.6em;
 	margin-top: 540px;
-	margin-left: 700px;
+	margin-left: 640px;
     color: white;
     font-family: 'Quicksand', sans-serif;
-	text-align: center;
+	
     position: absolute; left: 50px; top: 120px; z-index: 2;
     
     
 }
 
-#seccion2{
-	width: 400px;
-	height: 300px;
-	margin-top: 30px;
-	font-size: .9em;
-   
-	
-}
-
-#seccion3{
-	width: 400px;
-	height: 300px;
-	margin-top: 30px;
-	font-size: .9em;
-}
  #img1{
 	 margin-left: 300px;
 	 margin-top: 50px;
@@ -51,7 +37,7 @@
      background-color: black;
  }
 
- img{
+ #img2{
      margin-left: 150px;
  }
 
@@ -63,17 +49,47 @@
  }
 
  #seccion4{
-	width: 400px;
+	width: 500px;
 	height: 300px;
 	font-size: 1.6em;
 	margin-top: 540px;
-	margin-left: 100px;
+	margin-left: 90px;
     font-family: 'Quicksand', sans-serif;
     color: white;
     position: absolute; left: 50px; top: 120px; z-index: 2;
     
     
 }
+
+.card{
+	margin-left: 100px;
+	margin-top: 90px;
+	background-color: #722196;
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+	float:left;
+	@media (min-width: 576px)
+}
+
+
+.card:hover{
+	-webkit-transform:scale(1.2);
+	background-color: #722196;
+}
+
+.card{
+	-webkit-transition: -webkit-transform 0.4s ease-in-out 0.5s;
+	border-radius: 10px;
+}
+
+#footer{
+	background-color: #722196;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: white;
+	text-align: center;
+}
+
+
  
 
  
