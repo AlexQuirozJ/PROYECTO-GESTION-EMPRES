@@ -3,44 +3,55 @@ const Registrar = document.getElementById('registrar');
 
 Registrar.addEventListener('click', (e) => {
   e.preventDefault();
-  const Descripcion = document.getElementById('descripcion');
-  const Proveedor = document.getElementById('proveedor');
-  const Codigo = document.getElementById('codigo');
-  const Tipo = document.getElementById('tipo');
-  const Precio = document.getElementById('precio');
+  const descripcion = document.getElementById('descripcion');
+  const proveedor = document.getElementById('proveedor');
+  const codigo = document.getElementById('codigo');
+  const tipo = document.getElementById('tipo');
+  const precio = document.getElementById('precio');
+  const mis_resultados = document.querySelector('mis_resultados');
 
 
-
-  if (Descripcion.value == '') {
-    nameError.innerHTML = 'Error, el nombre no debe estar vacío';
+  if (descripcion.value == '') {
+    nameError.innerHTML = 'Error, el campo descripcion no debe estar vacío';
   }
 
-  if (Proveedor.value == '') {
-    passwordError.innerHTML = 'Error, el email no debe estar vacío';
+  if (proveedor.value == '') {
+    passwordError.innerHTML = 'Error, el campo proveedor no debe estar vacío';
   }
-  if (Codigo.value == '') {
-    passwordError.innerHTML = 'Error, el email no debe estar vacío';
+  if (codigo.value == '') {
+    passwordError.innerHTML = 'Error, el campo codigo no debe estar vacío';
   }
-  if (Tipo.value == '') {
-    passwordError.innerHTML = 'Error, el email no debe estar vacío';
+  if (tipo.value == '') {
+    passwordError.innerHTML = 'Error, el campo tipo no debe estar vacío';
   }
-  if (Precio.value == '') {
-    passwordError.innerHTML = 'Error, el email no debe estar vacío';
+  if (precio.value == '') {
+    passwordError.innerHTML = 'Error, el campo precio no debe estar vacío';
   }
     
-    if (Descripcion.value != '' && Proveedor.value != '' && Codigo.value != '' && Tipo.value != '' && Precio.value != '') {
+    if (descripcion.value != '' && proveedor.value != '' && codigo.value != '' && tipo.value != '' && precio.value != '') {
         fetch('http://localhost:8080/productos', {
           method: 'POST',
           body: JSON.stringify({
-            Descripcion: Descripcion.value,
-            Proveedor: Proveedor.value,
-            Codigo: Codigo.value,
-            Tipo: Tipo.value,
-            Precio: Precio.valuue
+            descripcion: descripcion.value,
+            proveedor: proveedor.value,
+            codigo: codigo.value,
+            tipo: tipo.value,
+            precio: precio.value
           }),
           headers: {
             'Content-Type': 'application/json',
           },
         }).then((resp) => {
+      console.log(resp);
+    });
+  }
+});
+
+
+
+
+
+      
+        
 
  

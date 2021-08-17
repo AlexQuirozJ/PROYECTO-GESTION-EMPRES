@@ -75,7 +75,7 @@
         <div class="form-row">
           <div class="col-md-3 mb-3">
             <label for="validationCustom03">Codigo</label>
-            <input type="text" class="form-control" id="validationCustom03" required>
+            <input type="text" class="form-control" id="codigo" required>
             <div class="invalid-feedback">
               Please provide a valid city.
             </div>
@@ -93,7 +93,7 @@
           </div>
           <div class="col-md-2 mb-3 ">
             <label for="validationCustom05">Precio</label>
-            <input type="text" class="form-control" id="precio" required  value="$">
+            <input type="text" class="form-control" id="precio" required  value="">
             <div class="invalid-feedback">
             </div>
           </div>
@@ -101,11 +101,11 @@
         <button class="btn btn-primary" type="submit" id="registrar">Registrar</button>
       </form>
 
-      <div id="mis_resultados"></div>
+      <div class="mi_grid" id="productosMostrados"></div>
 
 
 
-
+    <script src="assets/js/productos.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
