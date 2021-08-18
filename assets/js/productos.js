@@ -1,4 +1,3 @@
-const Resultados = document.querySelector('mis_resultados');
 const Registrar = document.getElementById('registrar');
 
 Registrar.addEventListener('click', (e) => {
@@ -8,24 +7,23 @@ Registrar.addEventListener('click', (e) => {
   const codigo = document.getElementById('codigo');
   const tipo = document.getElementById('tipo');
   const precio = document.getElementById('precio');
-  const mis_resultados = document.querySelector('mis_resultados');
 
 
   if (descripcion.value == '') {
-    nameError.innerHTML = 'Error, el campo descripcion no debe estar vacío';
+    descripcionError.innerHTML = 'Error, el campo descripcion no debe estar vacío';
   }
 
   if (proveedor.value == '') {
-    passwordError.innerHTML = 'Error, el campo proveedor no debe estar vacío';
+    proveedorError.innerHTML = 'Error, el campo proveedor no debe estar vacío';
   }
   if (codigo.value == '') {
-    passwordError.innerHTML = 'Error, el campo codigo no debe estar vacío';
+    codigodError.innerHTML = 'Error, el campo codigo no debe estar vacío';
   }
   if (tipo.value == '') {
-    passwordError.innerHTML = 'Error, el campo tipo no debe estar vacío';
+    tipoError.innerHTML = 'Error, el campo tipo no debe estar vacío';
   }
   if (precio.value == '') {
-    passwordError.innerHTML = 'Error, el campo precio no debe estar vacío';
+    precioError.innerHTML = 'Error, el campo precio no debe estar vacío';
   }
     
     if (descripcion.value != '' && proveedor.value != '' && codigo.value != '' && tipo.value != '' && precio.value != '') {
@@ -46,6 +44,42 @@ Registrar.addEventListener('click', (e) => {
     });
   }
 });
+
+const productosMostrados = document.getElementById('productosMostrados');
+const btnProductos =document.getElementById('btnProductos');
+const datos =document.getElementById('datos');
+
+
+btnProductos.addEventListener('click', () => {
+  fetch('http://localhost:8080/productos')
+  .then(data => data.json())
+  .then(data =>{
+    productos=data;
+    mostrarProducto(productos)
+  })
+});
+
+function mostrarProducto (productos) {
+  
+  productos.map((producto) => {
+    
+    let descripcion =document.createElement('th');
+    descripcion.innerHTML= producto.descripcion
+    datos.appendChild(descripcion);
+    
+
+   
+   
+  
+})
+
+
+};
+  
+
+
+
+
 
 
 
