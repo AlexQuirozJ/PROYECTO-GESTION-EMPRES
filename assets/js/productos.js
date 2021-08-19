@@ -87,9 +87,11 @@ btnProductos.addEventListener('click', () => {
 
 /*AQUÍ MAQUETEMOS EL HTML, MEDIANTE EL PARAMETRO productos que almacena el ARRAY de la DB*/
 const mostrarProducto = (productos) => {
+
+//RECUERDA QUE EL MAP REGRESA UN NUEVO ARREGLO, ES DECIR, EL API MANDA UN ARREGLO PERO EL MAP CREA UNO NUEVO Y DEBEMOS AJUSTARLO
   const htmlString = productos.map((producto) => {
-    const string = `<tr>
-      <td> ${producto.id}</td>
+    return`<tr>
+      <td id="td1"> ${producto.id}</td>
       <td> ${producto.descripcion}</td>
       <td> ${producto.proveedor}</td>
       <td> ${producto.tipo}</td>
@@ -97,10 +99,10 @@ const mostrarProducto = (productos) => {
       <td> ${producto.codigo}</td>
       </tr>
     `;
-
+  
     // retornas todo el tr con sus td a htmlString
-    return string;
-  });
+  
+  }).join('');;
 
   //INSERTAMOS LOS DATOS EN EL HTML POR EL ID
   results.innerHTML = htmlString;

@@ -55,6 +55,7 @@
   </nav>
 
   <!--Creación de las filas con lo consumido por web service -->
+  <img src="assets/registro_adobespark.png" id="logReg">
   <form class="needs-validation" novalidate id="formularioProductos">
     <div class="form-row">
       <div class="col-md-4 mb-3">
@@ -69,6 +70,7 @@
         <input type="text" class="form-control" id="proveedor" value="" required>
         <div class="valid-feedback">
           <span id="proveedorError"></span>
+
         </div>
       </div>
     </div>
@@ -83,7 +85,7 @@
       <div class="col-md-3 mb-3">
         <label for="validationCustom04">Tipo</label>
         <select class="custom-select" id="tipo" required>
-          <option selected disabled value="">Sensor</option>
+          <option value="">Sensor</option>
           <option>GPS</option>
           <option>Accesorio</option>
         </select>
@@ -101,29 +103,24 @@
     </div>
     <button class="btn btn-primary" type="submit" id="registrar">Registrar</button>
   </form>
-
-  <button id="btnProductos">Productos</button>
+  
+  <button class="btn btn-primary" type="submit" id="btnProductos">Ver Mis Productos</button>
   </p>
 
   <table class="table table-sm">
     <thead>
-      <tr>
-        <th scope="col">#</th>
+      <tr id="td">
+        <th scope="col" >#</th>
         <th scope="col" >Descripción</th>
         <th scope="col">Proveedor</th>
         <th scope="col">Tipo</th>
         <th scope="col">Precio</th>
         <th scope="col">Codigo</th>
       </tr>
-      <th id="id_product">
-      <td></td>
-      </th>
     </thead>
-    <tbody id="results">
+    <tbody id="results" >
     </tbody>
   </table>
-
-
 
 
 

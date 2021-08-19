@@ -87,26 +87,6 @@
 	text-align: center;
 }
 
-#rombo1{
-	background-color: aqua;
-	position:relative;
-	width: 50px;
-	height: 50px;
-	transform: rotate(45deg);
-	
-	margin-top: 30px;
-}
-
-#rombo2{
-	background-color: aqua;
-	position:relative;
-	width: 50px;
-	height: 50px;
-	transform: rotate(45deg);
-	
-	margin-top: 70px;
-}
-
 #titulo2{
 	margin-top: 70px;
 	margin-left: 70px;
@@ -124,11 +104,10 @@
 /*CSS DE PRODUCTOS*/
 
 #formularioProductos{
-	background-color: #722196;
+	background-color: #292196;
 	margin-top: 10px;
-	width: 1200px;
-	margin-left: 40px;
 	border-radius: 20px;
+
 }
 
 .form-row{
@@ -136,8 +115,43 @@
 }
 
 #registrar{
-	margin-left: 520px;
+	margin-left: 220px;
+	color: white;
+	font-family: 'Quicksand', sans-serif;
 }
+
+#logReg{
+	float: left;
+}
+
+#btnProductos{
+	margin-top: 100px;
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+}
+
+label{
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#td{
+font-family: 'Quicksand', sans-serif;	
+}
+
+#td1{
+	color: black;
+	font-family: 'Quicksand', sans-serif;	
+}
+
+td{
+	font-family: sans-serif;
+}
+
+.table{
+	margin-left: 20px;
+}
+
 
 
  
