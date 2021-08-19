@@ -49,7 +49,8 @@ Registrar.addEventListener('click', (e) => {
 /*FUNCION PARA TRAER LOS DATOS POR FETCH Y ALOJARLOS EN TABLA */
 const btnProductos =document.getElementById('btnProductos');
 const id_product = document.getElementById('id_product')
-const desc = document.getElementById('desc')
+const dato = document.getElementById('dato')
+
 
 btnProductos.addEventListener('click', () => {
   fetch('http://localhost:8080/productos')
@@ -66,8 +67,14 @@ btnProductos.addEventListener('click', () => {
         .map((producto) => {
     return`
     <table class="table">
+      
       <th >${producto.id}</th>
       <td> ${producto.descripcion}</td>
+      <td> ${producto.proveedor}</td>
+      <td> ${producto.tipo}</td>
+      <td> ${producto.precio}</td>
+      <td> ${producto.codigo}</td>
+  
     </tbody>
   </table>
     `;
@@ -75,8 +82,8 @@ btnProductos.addEventListener('click', () => {
 .join('');
 
 //INSERTAMOS LOS DATOS EN EL HTML POR EL ID
-
-desc.innerHTML = htmlString;
+dato.innerHTML=htmlString;
+id_product.innerHTML = htmlString;
 };
 
 
