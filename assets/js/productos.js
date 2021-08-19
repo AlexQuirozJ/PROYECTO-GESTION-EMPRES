@@ -48,7 +48,7 @@ Registrar.addEventListener('click', (e) => {
 
 /*FUNCION PARA TRAER LOS DATOS POR FETCH Y ALOJARLOS EN TABLA */
 const btnProductos =document.getElementById('btnProductos');
-const datos = document.getElementById('id_product')
+const id_product = document.getElementById('id_product')
 const desc = document.getElementById('desc')
 
 btnProductos.addEventListener('click', () => {
@@ -75,7 +75,7 @@ btnProductos.addEventListener('click', () => {
 .join('');
 
 //INSERTAMOS LOS DATOS EN EL HTML POR EL ID
-id_product.innerHTML = htmlString;
+
 desc.innerHTML = htmlString;
 };
 
