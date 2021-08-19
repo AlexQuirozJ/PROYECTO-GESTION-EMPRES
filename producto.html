@@ -61,13 +61,14 @@
         <label for="validationCustom01">Descripción</label>
         <input type="text" class="form-control" id="descripcion" value="" required>
         <div class="valid-feedback">
-
+          <span id="descripcionError"></span>
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom02">Proveedor</label>
         <input type="text" class="form-control" id="proveedor" value="" required>
         <div class="valid-feedback">
+          <span id="proveedorError"></span>
         </div>
       </div>
     </div>
@@ -76,7 +77,7 @@
         <label for="validationCustom03">Codigo</label>
         <input type="text" class="form-control" id="codigo" required>
         <div class="invalid-feedback">
-          Please provide a valid city.
+          <span id="codigodError"></span>
         </div>
       </div>
       <div class="col-md-3 mb-3">
@@ -87,13 +88,14 @@
           <option>Accesorio</option>
         </select>
         <div class="invalid-feedback">
-          Please select a valid state.
+          <span id="tipoError"></span>
         </div>
       </div>
       <div class="col-md-2 mb-3 ">
         <label for="validationCustom05">Precio</label>
         <input type="text" class="form-control" id="precio" required value="">
         <div class="invalid-feedback">
+          <span id="precioError"></span>
         </div>
       </div>
     </div>
@@ -113,10 +115,9 @@
         <th scope="col">Precio</th>
         <th scope="col">Codigo</th>
       </tr>
-      <th id="id_product">
-      <td id="desc"></td>
-      </th>
     </thead>
+    <tbody id="desc">
+    </tbody>
   </table>
 
 
