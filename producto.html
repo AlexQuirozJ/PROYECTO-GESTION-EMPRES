@@ -2,139 +2,135 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
-    <title>producto</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+  <title>producto</title>
 </head>
 
 <body>
 
-    <!--BARRA DE NAVEGACION-->
-        <nav class="navbar navbar-expand-md navbar-light sticky-top border-primary border-bottom border-5" id="navbar">
-            <a class="navbar-brand" href="index.html" style="color: white;">Fulltime</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto" id="items">
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="loginvista.html"  style="color:beige">Crear Producto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loginvista.html"  style="color:beige">Crear Proveedor</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loginvista.html"  style="color:beige">Crear Inventario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loginvista.html"  style="color:beige">Nueva Venta</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loginvista.html"  style="color:beige">Entrada de Mercancia</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loginvista.html"  style="color:beige">Ventas</a>
-                </li>
-            </ul>
-            <ul  class="navbar-nav mr-6" id="sesion">
-                <li class="nav-item">
-                    <a class="nav-link" href="loginvista.html"  style="color:beige">Iniciar Sesion</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-    </nav>
+  <!--BARRA DE NAVEGACION-->
+  <nav class="navbar navbar-expand-md navbar-light sticky-top border-primary border-bottom border-5" id="navbar">
+    <a class="navbar-brand" href="index.html" style="color: white;">Fulltime</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" id="items">
 
-    <!--Creación de las filas con lo consumido por web service -->
-    <form class="needs-validation" novalidate id="formularioProductos">
-        <div class="form-row">
-          <div class="col-md-4 mb-3" >
-            <label for="validationCustom01">Descripción</label>
-            <input type="text" class="form-control" id="descripcion" value="" required>
-            <div class="valid-feedback">
-              
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="validationCustom02">Proveedor</label>
-            <input type="text" class="form-control" id="proveedor" value="" required>
-            <div class="valid-feedback">
-            </div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-3 mb-3">
-            <label for="validationCustom03">Codigo</label>
-            <input type="text" class="form-control" id="codigo" required>
-            <div class="invalid-feedback">
-              Please provide a valid city.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationCustom04">Tipo</label>
-            <select class="custom-select" id="tipo" required>
-              <option selected disabled value="">Sensor</option>
-              <option>GPS</option>
-              <option>Accesorio</option>
-            </select>
-            <div class="invalid-feedback">
-              Please select a valid state.
-            </div>
-          </div>
-          <div class="col-md-2 mb-3 ">
-            <label for="validationCustom05">Precio</label>
-            <input type="text" class="form-control" id="precio" required  value="">
-            <div class="invalid-feedback">
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-primary" type="submit" id="registrar">Registrar</button>
-      </form>
-
-      <button id="btnProductos">Productos</button>
-    </p>
-    <div class="mi_grid" id="productosMostrados" >
-      <div class="mi_grid">
-        <table class="table table-sm">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Descripción</th>
-              <th scope="col">Proveedor</th>
-              <th scope="col">Tipo</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Codigo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr id="datos">
-              <th scope="row" >1</th>
-            </tr>
-            
-          </tbody>
-        </table>
+        <li class="nav-item">
+          <a class="nav-link" href="loginvista.html" style="color:beige">Crear Producto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="loginvista.html" style="color:beige">Crear Proveedor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="loginvista.html" style="color:beige">Crear Inventario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="loginvista.html" style="color:beige">Nueva Venta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="loginvista.html" style="color:beige">Entrada de Mercancia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="loginvista.html" style="color:beige">Ventas</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-6" id="sesion">
+        <li class="nav-item">
+          <a class="nav-link" href="loginvista.html" style="color:beige">Iniciar Sesion</a>
+        </li>
+      </ul>
     </div>
+    </div>
+  </nav>
+
+  <!--Creación de las filas con lo consumido por web service -->
+  <form class="needs-validation" novalidate id="formularioProductos">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" value="" required>
+        <div class="valid-feedback">
+
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom02">Proveedor</label>
+        <input type="text" class="form-control" id="proveedor" value="" required>
+        <div class="valid-feedback">
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom03">Codigo</label>
+        <input type="text" class="form-control" id="codigo" required>
+        <div class="invalid-feedback">
+          Please provide a valid city.
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Tipo</label>
+        <select class="custom-select" id="tipo" required>
+          <option selected disabled value="">Sensor</option>
+          <option>GPS</option>
+          <option>Accesorio</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="col-md-2 mb-3 ">
+        <label for="validationCustom05">Precio</label>
+        <input type="text" class="form-control" id="precio" required value="">
+        <div class="invalid-feedback">
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" id="registrar">Registrar</button>
+  </form>
+
+  <button id="btnProductos">Productos</button>
+  </p>
+
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Proveedor</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Codigo</th>
+      </tr>
+      <th id="id_product">
+      <td id="desc"></td>
+      </th>
+    </thead>
+  </table>
 
 
 
-    <script src="assets/js/productos.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
+
+
+  <script src="assets/js/productos.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

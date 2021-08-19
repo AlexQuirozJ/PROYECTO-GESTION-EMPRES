@@ -1,3 +1,4 @@
+/*FUNCION PARA ENVIAR LOS DATOS POR EL FORMULARIO Y SE ALMACENEN EN LA DB JAVA*/
 const Registrar = document.getElementById('registrar');
 
 Registrar.addEventListener('click', (e) => {
@@ -45,10 +46,10 @@ Registrar.addEventListener('click', (e) => {
   }
 });
 
-const productosMostrados = document.getElementById('productosMostrados');
+/*FUNCION PARA TRAER LOS DATOS POR FETCH Y ALOJARLOS EN TABLA */
 const btnProductos =document.getElementById('btnProductos');
-const datos =document.getElementById('datos');
-
+const datos = document.getElementById('id_product')
+const desc = document.getElementById('desc')
 
 btnProductos.addEventListener('click', () => {
   fetch('http://localhost:8080/productos')
@@ -59,23 +60,24 @@ btnProductos.addEventListener('click', () => {
   })
 });
 
-function mostrarProducto (productos) {
-  
-  productos.map((producto) => {
-    
-    let descripcion =document.createElement('th');
-    descripcion.innerHTML= producto.descripcion
-    datos.appendChild(descripcion);
-    
-
-   
-   
-  
+/*AQUÍ MAQUETEMOS EL HTML, MEDIANTE EL PARAMETRO productos que almacena el ARRAY de la DB*/ 
+    const mostrarProducto = (productos) => {
+      const htmlString = productos
+        .map((producto) => {
+    return`
+    <table class="table">
+      <th >${producto.id}</th>
+      <td> ${producto.descripcion}</td>
+    </tbody>
+  </table>
+    `;
 })
+.join('');
 
-
+//INSERTAMOS LOS DATOS EN EL HTML POR EL ID
+id_product.innerHTML = htmlString;
+desc.innerHTML = htmlString;
 };
-  
 
 
 
