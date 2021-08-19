@@ -88,16 +88,15 @@ btnProductos.addEventListener('click', () => {
 /*AQUÍ MAQUETEMOS EL HTML, MEDIANTE EL PARAMETRO productos que almacena el ARRAY de la DB*/
 const mostrarProducto = (productos) => {
   const htmlString = productos.map((producto) => {
-    // creas el tr
-    let string = '<tr>';
-
-    for(const dato in producto) {
-      
-      // lees cada dato del objeto
-      string += `<td> ${producto[dato]}</td>`;
-    }
-
-    string += '</tr>';
+    const string = `<tr>
+      <td> ${producto.id}</td>
+      <td> ${producto.descripcion}</td>
+      <td> ${producto.proveedor}</td>
+      <td> ${producto.tipo}</td>
+      <td> ${producto.precio}</td>
+      <td> ${producto.codigo}</td>
+      </tr>
+    `;
 
     // retornas todo el tr con sus td a htmlString
     return string;
