@@ -9,81 +9,102 @@ Registrar.addEventListener('click', (e) => {
   const tipo = document.getElementById('tipo');
   const precio = document.getElementById('precio');
 
+  // Faltaba agregar donde estan los de error
+  const descripcionError = document.getElementById('descripcionError');
+  const proveedorError = document.getElementById('proveedorError');
+  const codigodError = document.getElementById('codigodError');
+  const tipoError = document.getElementById('tipoError');
+  const precioError = document.getElementById('precioError');
 
-  if (descripcion.value == '') {
+  // Limpias los mensajes de error antes
+  descripcionError.innerHTML = '';
+  proveedorError.innerHTML = '';
+  codigodError.innerHTML = '';
+  tipoError.innerHTML = '';
+  precioError.innerHTML = '';
+
+  // validas uno por uno y inicializas esta bandera de error como false
+  let error = false;
+
+  if (descripcion.value === '') {
+    // ya llenas solo los que fallen
     descripcionError.innerHTML = 'Error, el campo descripcion no debe estar vacío';
+    error = true;
   }
 
-  if (proveedor.value == '') {
+  if (proveedor.value === '') {
     proveedorError.innerHTML = 'Error, el campo proveedor no debe estar vacío';
+    error = true;
   }
-  if (codigo.value == '') {
+
+  if (codigo.value === '') {
     codigodError.innerHTML = 'Error, el campo codigo no debe estar vacío';
+    error = true;
   }
-  if (tipo.value == '') {
+
+  if (tipo.value === '') {
     tipoError.innerHTML = 'Error, el campo tipo no debe estar vacío';
+    error = true;
   }
-  if (precio.value == '') {
+
+  if (precio.value === '') {
     precioError.innerHTML = 'Error, el campo precio no debe estar vacío';
+    error = true;
   }
-    
-    if (descripcion.value != '' && proveedor.value != '' && codigo.value != '' && tipo.value != '' && precio.value != '') {
-        fetch('http://localhost:8080/productos', {
-          method: 'POST',
-          body: JSON.stringify({
-            descripcion: descripcion.value,
-            proveedor: proveedor.value,
-            codigo: codigo.value,
-            tipo: tipo.value,
-            precio: precio.value
-          }),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }).then((resp) => {
+
+  // así ya solo checas la bandera en vez de volver a validar los datos
+  if (!error) {
+    fetch('http://localhost:8080/productos', {
+      method: 'POST',
+      body: JSON.stringify({
+        descripcion: descripcion.value,
+        proveedor: proveedor.value,
+        codigo: codigo.value,
+        tipo: tipo.value,
+        precio: precio.value
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((resp) => {
       console.log(resp);
     });
   }
 });
 
 /*FUNCION PARA TRAER LOS DATOS POR FETCH Y ALOJARLOS EN TABLA */
-const btnProductos =document.getElementById('btnProductos');
-const id_product = document.getElementById('id_product')
-const dato = document.getElementById('dato')
-
+const btnProductos = document.getElementById('btnProductos');
+const results = document.getElementById('results')
 
 btnProductos.addEventListener('click', () => {
   fetch('http://localhost:8080/productos')
-  .then(data => data.json())
-  .then(data =>{
-    productos=data;
-    mostrarProducto(productos)
-  })
+    .then(data => data.json())
+    .then(data => {
+      productos = data;
+      mostrarProducto(productos)
+    })
 });
 
-/*AQUÍ MAQUETEMOS EL HTML, MEDIANTE EL PARAMETRO productos que almacena el ARRAY de la DB*/ 
-    const mostrarProducto = (productos) => {
-      const htmlString = productos
-        .map((producto) => {
-    return`
-    <table class="table">
-      
-      <th >${producto.id}</th>
-      <td> ${producto.descripcion}</td>
-      <td> ${producto.proveedor}</td>
-      <td> ${producto.tipo}</td>
-      <td> ${producto.precio}</td>
-      <td> ${producto.codigo}</td>
-  
-    </tbody>
-  </table>
-    `;
-})
-.join('');
+/*AQUÍ MAQUETEMOS EL HTML, MEDIANTE EL PARAMETRO productos que almacena el ARRAY de la DB*/
+const mostrarProducto = (productos) => {
+  const htmlString = productos.map((producto) => {
+    // creas el tr
+    let string = '<tr>';
 
-//INSERTAMOS LOS DATOS EN EL HTML POR EL ID
-dato.innerHTML=htmlString;
-id_product.innerHTML = htmlString;
+    for(const dato in producto) {
+      
+      // lees cada dato del objeto
+      string += `<td> ${producto[dato]}</td>`;
+    }
+
+    string += '</tr>';
+
+    // retornas todo el tr con sus td a htmlString
+    return string;
+  });
+
+  //INSERTAMOS LOS DATOS EN EL HTML POR EL ID
+  results.innerHTML = htmlString;
 };
 
 
@@ -94,7 +115,6 @@ id_product.innerHTML = htmlString;
 
 
 
-      
-        
 
- 
+
+
