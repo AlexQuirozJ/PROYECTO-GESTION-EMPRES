@@ -115,7 +115,7 @@
 }
 
 #registrar{
-	margin-left: 220px;
+	margin-left: 320px;
 	color: white;
 	font-family: 'Quicksand', sans-serif;
 }
@@ -127,6 +127,7 @@
 #btnProductos{
 	margin-top: 100px;
 	color: white;
+	float: left;
 	font-family: 'Quicksand', sans-serif;
 }
 
@@ -152,7 +153,18 @@ td{
 	margin-left: 20px;
 }
 
+.alert{
+	display:none;
+  }
 
+#editar{
+	margin-left: 600px;
+	margin-top: 90px;
+}
+
+#eliminar{
+	margin-top: 90px;
+}
 
  
 

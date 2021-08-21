@@ -1,7 +1,9 @@
 /*FUNCION PARA ENVIAR LOS DATOS POR EL FORMULARIO Y SE ALMACENEN EN LA DB JAVA*/
 const Registrar = document.getElementById('registrar');
+const alertt =document.getElementById('alertt');
 
 Registrar.addEventListener('click', (e) => {
+ 
   e.preventDefault();
   const descripcion = document.getElementById('descripcion');
   const proveedor = document.getElementById('proveedor');
@@ -9,51 +11,13 @@ Registrar.addEventListener('click', (e) => {
   const tipo = document.getElementById('tipo');
   const precio = document.getElementById('precio');
 
-  // Faltaba agregar donde estan los de error
-  const descripcionError = document.getElementById('descripcionError');
-  const proveedorError = document.getElementById('proveedorError');
-  const codigodError = document.getElementById('codigodError');
-  const tipoError = document.getElementById('tipoError');
-  const precioError = document.getElementById('precioError');
-
-  // Limpias los mensajes de error antes
-  descripcionError.innerHTML = '';
-  proveedorError.innerHTML = '';
-  codigodError.innerHTML = '';
-  tipoError.innerHTML = '';
-  precioError.innerHTML = '';
-
-  // validas uno por uno y inicializas esta bandera de error como false
-  let error = false;
-
-  if (descripcion.value === '') {
-    // ya llenas solo los que fallen
-    descripcionError.innerHTML = 'Error, el campo descripcion no debe estar vacío';
-    error = true;
-  }
-
-  if (proveedor.value === '') {
-    proveedorError.innerHTML = 'Error, el campo proveedor no debe estar vacío';
-    error = true;
-  }
-
-  if (codigo.value === '') {
-    codigodError.innerHTML = 'Error, el campo codigo no debe estar vacío';
-    error = true;
-  }
-
-  if (tipo.value === '') {
-    tipoError.innerHTML = 'Error, el campo tipo no debe estar vacío';
-    error = true;
-  }
-
-  if (precio.value === '') {
-    precioError.innerHTML = 'Error, el campo precio no debe estar vacío';
-    error = true;
-  }
-
-  // así ya solo checas la bandera en vez de volver a validar los datos
-  if (!error) {
+  
+if (descripcion.value == '' , proveedor.value == '', codigo.value == '' , tipo.value == '', precio.value == '') {
+  alert("Por favor complete todos los campos");
+}
+  
+if (descripcion.value != '' && proveedor.value != '' && codigo.value != '' && tipo.value != '' && precio.value != '') {
+    $('.alert').show()
     fetch('http://localhost:8080/productos', {
       method: 'POST',
       body: JSON.stringify({
@@ -65,10 +29,15 @@ Registrar.addEventListener('click', (e) => {
       }),
       headers: {
         'Content-Type': 'application/json',
+        
       },
+      
     }).then((resp) => {
       console.log(resp);
+      
+      
     });
+    
   }
 });
 
@@ -97,7 +66,11 @@ const mostrarProducto = (productos) => {
       <td> ${producto.tipo}</td>
       <td> ${producto.precio}</td>
       <td> ${producto.codigo}</td>
+      <td><div class="form-check">
+      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" aria-label="...">
+    </div></td>
       </tr>
+      
     `;
   
     // retornas todo el tr con sus td a htmlString
@@ -107,6 +80,32 @@ const mostrarProducto = (productos) => {
   //INSERTAMOS LOS DATOS EN EL HTML POR EL ID
   results.innerHTML = htmlString;
 };
+
+
+//FUNCIONES PARA ELIMINAR Y ACTUALIZAR
+
+//meter una funcion, al dar click en el check, almacena el valor del id en id.value
+//luego lo metes en la función de abajo y listo
+
+const eliminar = document.getElementById('eliminar');
+
+eliminar.addEventListener('click', ()=> {
+  fetch(`http://localhost:8080/productos/${id}`, {
+      method: 'DELETE',
+      body: JSON.stringify({
+        id:id.value
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        
+      },
+      
+    }).then((resp) => {
+      console.log(resp);
+    });
+    
+  }
+);
 
 
 

@@ -54,58 +54,68 @@
     </div>
   </nav>
 
+  
+  <div class="container">
+    <div class="alert alert-primary alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        Registro creado con exito
+    </div>
+
+</div>
   <!--Creación de las filas con lo consumido por web service -->
   <img src="assets/registro_adobespark.png" id="logReg">
   <form class="needs-validation" novalidate id="formularioProductos">
     <div class="form-row">
-      <div class="col-md-4 mb-3">
+      <div class="col-md-5 mb-3">
         <label for="validationCustom01">Descripción</label>
-        <input type="text" class="form-control" id="descripcion" value="" required>
+        <input type="text" class="form-control" id="descripcion" required>
         <div class="valid-feedback">
-          <span id="descripcionError"></span>
         </div>
       </div>
-      <div class="col-md-4 mb-3">
+      <div class="col-md-5 mb-3">
         <label for="validationCustom02">Proveedor</label>
-        <input type="text" class="form-control" id="proveedor" value="" required>
+        <input type="text" class="form-control" id="proveedor" required>
         <div class="valid-feedback">
-          <span id="proveedorError"></span>
-
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-3 mb-3">
-        <label for="validationCustom03">Codigo</label>
+        <label for="validationCustom03">Precio</label>
         <input type="text" class="form-control" id="codigo" required>
         <div class="invalid-feedback">
-          <span id="codigodError"></span>
         </div>
       </div>
-      <div class="col-md-3 mb-3">
+      <div class="col-md-4 mb-3">
         <label for="validationCustom04">Tipo</label>
         <select class="custom-select" id="tipo" required>
-          <option value="">Sensor</option>
+          <option>Sensor</option>
           <option>GPS</option>
           <option>Accesorio</option>
         </select>
-        <div class="invalid-feedback">
-          <span id="tipoError"></span>
-        </div>
       </div>
-      <div class="col-md-2 mb-3 ">
-        <label for="validationCustom05">Precio</label>
-        <input type="text" class="form-control" id="precio" required value="">
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom05">Codigo</label>
+        <input type="text" class="form-control" id="precio" required>
         <div class="invalid-feedback">
-          <span id="precioError"></span>
         </div>
       </div>
     </div>
-    <button class="btn btn-primary" type="submit" id="registrar">Registrar</button>
-  </form>
-  
+    </div>
+    <button  class="btn btn-primary" type="submit" id="registrar">Registrar</button>
+  </form>    
+
   <button class="btn btn-primary" type="submit" id="btnProductos">Ver Mis Productos</button>
   </p>
+  <!--botones de elimincación y actualización-->
+  <button type="button" class="btn btn-warning" id="editar">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+    </svg></td></button>
+    <button type="button" class="btn btn-danger" id="eliminar">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+    </svg></button>
 
   <table class="table table-sm">
     <thead>
@@ -116,6 +126,9 @@
         <th scope="col">Tipo</th>
         <th scope="col">Precio</th>
         <th scope="col">Codigo</th>
+        <th scope="col"><div class="form-check">
+          <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+        </div></th>
       </tr>
     </thead>
     <tbody id="results" >
