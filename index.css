@@ -104,9 +104,13 @@
 /*CSS DE PRODUCTOS*/
 
 #formularioProductos{
-	background-color: #292196;
+	background-color:#fffefe;
+	border-style: solid;
 	margin-top: 10px;
 	border-radius: 20px;
+	height: 230px;
+	width: 97%;
+	margin-left: 20px;
 
 }
 
@@ -115,7 +119,7 @@
 }
 
 #registrar{
-	margin-left: 320px;
+	margin-left: 300px;
 	color: white;
 	font-family: 'Quicksand', sans-serif;
 }
@@ -132,14 +136,13 @@
 }
 
 label{
-	color: white;
+	color: black;
 	font-family: 'Quicksand', sans-serif;
 }
 
 #td{
 font-family: 'Quicksand', sans-serif;	
 }
-
 #td1{
 	color: black;
 	font-family: 'Quicksand', sans-serif;	
@@ -153,18 +156,15 @@ td{
 	margin-left: 20px;
 }
 
-.alert{
-	display:none;
-  }
-
-#editar{
-	margin-left: 600px;
-	margin-top: 90px;
+#tbl_products{
+	margin-top: 160px;
 }
 
-#eliminar{
-	margin-top: 90px;
-}
+
+
+
+
+
 
  
 
