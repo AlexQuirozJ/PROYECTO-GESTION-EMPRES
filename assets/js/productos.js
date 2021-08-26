@@ -1,10 +1,31 @@
-const proveedores= document.getElementById('proveedores')
+//FUNCION PARA TRAER A LOS PROVEEDORES QUE YA ESTAN REGISTRADOS
+const proveedor= document.getElementById('proveedor')
+
+function proveedoresList(){
+  fetch('http://localhost:8080/Proveedores')
+  .then(data => data.json())
+  .then(data => {
+    proveed = data;
+    mostrarProveedores(proveed)
+  
+});
+
+/*AQUÍ MAQUETEMOS EL HTML, MEDIANTE EL PARAMETRO productos que almacena el ARRAY de la DB*/
+const mostrarProveedores = (proveed) => {
+
+//RECUERDA QUE EL MAP REGRESA UN NUEVO ARREGLO, ES DECIR, EL API MANDA UN ARREGLO PERO EL MAP CREA UNO NUEVO Y DEBEMOS AJUSTARLO
+const htmlString = proveed.map((proveedores) => {
+  return`<option>${proveedores.descripcion}</option>
+   `;
+  // retornas todo proveedor con el option al htmlstring
+}).join('');;
+
+//INSERTAMOS LOS DATOS EN EL HTML POR EL ID
+proveedor.innerHTML = htmlString;
+}};
 
 
-
-
-
-/*FUNCION PARA ENVIAR LOS DATOS POR EL FORMULARIO Y SE ALMACENEN EN LA DB JAVA*/
+/*FUNCION PARA ENVIAR LOS DATOS POR EL FORMULARIO Y SE ALMACENEN EN LA DB */
 const Registrar = document.getElementById('registrar');
 const alertt =document.getElementById('alertt');
 
@@ -96,7 +117,6 @@ const mostrarProducto = (productos) => {
 
 
 //FUNCION PARA ELIMINAR UN REGISTRO Y ACTUALIZAR LA TABLA CON LOS RESTANTES
-
 async function eliminar(productoId){
   fetch('http://localhost:8080/productos/'+productoId, {
     method:'DELETE'

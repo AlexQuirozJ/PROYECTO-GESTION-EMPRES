@@ -14,7 +14,7 @@
   <title>producto</title>
 </head>
 
-<body>
+<body onload="proveedoresList()">
 
   <!--BARRA DE NAVEGACION-->
   <nav class="navbar navbar-expand-md navbar-light sticky-top border-primary border-bottom border-5" id="navbar">
@@ -66,10 +66,9 @@
         </div>
       </div>
       <div class="col-md-5 mb-3">
-        <label for="validationCustom02">Proveedor</label>
-        <input type="text" class="form-control" id="proveedor" required>
-        <div class="valid-feedback">
-        </div>
+        <label for="validationCustom04">Proveedor</label>
+        <select class="custom-select" id="proveedor" required>
+        </select>
       </div>
     </div>
     <div class="form-row">
