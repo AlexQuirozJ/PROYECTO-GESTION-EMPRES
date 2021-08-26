@@ -160,6 +160,18 @@ td{
 	margin-top: 160px;
 }
 
+/*PAGINA PROVEEDORES*/
+#registrarp{
+	margin-left:330px;
+}
+
+#btnProveedores{
+	margin-top: 100px;
+	color: white;
+	float: left;
+	font-family: 'Quicksand', sans-serif;
+
+}
 
 
 
