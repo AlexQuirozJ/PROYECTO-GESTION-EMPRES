@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
-  <title>Proveedor</title>
+  <title>ventas</title>
 </head>
 
 <body>
@@ -56,48 +56,70 @@
 </div>
 
   <!--Creación de las filas con lo consumido por web service -->
-  <img src="assets/imagenes/proveedor_adobespark.png" id="logReg" width="300px" >
-  <form class="needs-validation" novalidate id="formularioProductos">
+  <img src="assets/imagenes/vnt.png" id="logvnt" width="400px" height="250px">
+  <form class="needs-validation" novalidate id="formularioVenta">
     <div class="form-row">
-      <div class="col-md-5 mb-3">
-        <label for="validationCustom01">Descripción</label>
+      <div class="col-md-6 mb-3">
+        <label for="validationCustom01">Descripción de la Venta</label>
         <input type="text" class="form-control" id="descripcion" required>
         <div class="valid-feedback">
         </div>
       </div>
       <div class="col-md-5 mb-3">
-        <label for="validationCustom02">Dirección Fiscal</label>
-        <input type="text" class="form-control" id="direccion" required>
-        <div class="valid-feedback">
-        </div>
+        <label id="fechaL">Fecha de Venta</label>
+        <input type="text" class="form-control" id="fecha" required>
+        
       </div>
     </div>
     <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom03">Producto Vendido</label>
+        <select class="custom-select" id="producto" required>
+          <option></option>
+          <option>LMU300</option>
+          <option>GV300W+</option>
+        </select>
+      </div>
       <div class="col-md-3 mb-3">
-        <label for="validationCustom03">Contacto</label>
-        <input type="text" class="form-control" id="contacto" required>
+        <label for="validationCustom04">Status de Pago</label>
+        <select class="custom-select" id="status" required>
+          <option></option>
+          <option>Pagado</option>
+          <option>Pendiente de pago</option>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom04">Vendedor</label>
+        <select class="custom-select" id="vendedor" required>
+          <div>
+            <option></option>
+            <option>Luis</option>
+            <option>Alex</option>
+          </div>
+        </select>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom05">Cantidad de productos</label>
+        <input type="text" class="form-control" id="cantidadP" required placeholder="">
         <div class="invalid-feedback">
         </div>
       </div>
       <div class="col-md-4 mb-3">
-        <label for="validationCustom04">Email</label>
-        <input type="text" class="form-control" id="email" required>
-        <div class="invalid-feedback">
-        </div>
+        <label for="validationCustom04">Cliente</label>
+        <select class="custom-select" id="cliente" required>
+          <div>
+            <option>logitel</option>
+            <option>SIGA+</option>
+          </div>
+        </select>
       </div>
-      <div class="col-md-3 mb-3">
-        <label for="validationCustom05">Telefono</label>
-        <input type="text" class="form-control" id="telefono" required>
-        <div class="invalid-feedback">
-        </div>
-      </div>
-      <button class="btn btn-primary" type="submit" id="registrarp">Registrar Proveedor</button>
+      <button class="btn btn-primary" type="submit" id="registrarVenta">Registrar</button>
     </div>
     
     </div>
   </form>    
 
-  <button class="btn btn-primary" type="submit" id="btnProveedores">Ver Mis Proveedores</button>
+  <button class="btn btn-primary" type="submit" id="btnVentas">Ver Mis Productos</button>
   </p>
   <!--botones de elimincación y actualización-->
   
@@ -107,11 +129,13 @@
       <tr id="td">
         <th scope="col">#</th>
         <th scope="col" >Descripción</th>
-        <th scope="col">Dirección Fiscal</th>
-        <th scope="col">Contacto</th>
-        <th scope="col">Email</th>
-        <th scope="col">Telefono</th>
-        <th scope="col">Acciones</th>
+        <th scope="col">Fecha de venta</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Status</th>
+        <th scope="col">Vendedor</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Total $</th>
         
       </tr>
     </thead>
@@ -121,7 +145,7 @@
 
   <a href="#" class="rainbow-button" target="blank_" alt="Rainbow"></a>
 
-  <script src="assets/js/proveeedores.js"></script>
+  <script src="assets/js/ventas.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
