@@ -108,7 +108,7 @@
 	border-style: solid;
 	margin-top: 10px;
 	border-radius: 20px;
-	height: 230px;
+	height: 260px;
 	width: 97%;
 	margin-left: 20px;
 
@@ -119,8 +119,11 @@
 }
 
 #registrar{
-	margin-left: 300px;
+	margin-left: 90px;
 	color: white;
+	width: 120px;
+	height: 40px;
+	margin-top: 30px;
 	font-family: 'Quicksand', sans-serif;
 }
 
@@ -153,7 +156,7 @@ td{
 }
 
 .table{
-	margin-left: 20px;
+	margin-left: 5px;
 }
 
 #tbl_products{
@@ -162,7 +165,9 @@ td{
 
 /*PAGINA PROVEEDORES*/
 #registrarp{
-	margin-left:330px;
+	margin-left:30px;
+	height: 40px;
+	margin-top: 30px;
 }
 
 #btnProveedores{
@@ -228,6 +233,27 @@ margin-left: 50px;
 #logvnt{
 	float: left;
 	margin-top: 20px;
+}
+
+/*PAGINA CLIENTES*/
+
+#logC{
+	float: left;
+	margin-left: 10px;
+	
+}
+
+#registrarc{
+	margin-left: 330px;
+}
+
+#btnClientes{
+	margin-top: 90px;
+	color: white;
+	float: left;
+	margin-left: 100px;
+	font-family: 'Quicksand', sans-serif;
+
 }
 
 

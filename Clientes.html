@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
-  <title>producto</title>
+  <title>clientes</title>
 </head>
 
 <body>
@@ -55,48 +55,46 @@
 </div>
 
   <!--Creación de las filas con lo consumido por web service -->
-  <img src="assets/imagenes/ventas2.PNG" id="logV" width="300">
+  <img src="assets/imagenes/clientef.png" id="logC" width="250" height="">
   <form class="needs-validation" novalidate id="formularioProductos">
     <div class="form-row">
       <div class="col-md-5 mb-3">
-        <label for="validationCustom01">Nombre</label>
-        <input type="text" class="form-control" id="nombre" required>
+        <label for="validationCustom01">Nombre de la Empresa</label>
+        <input type="text" class="form-control" id="empresa" required>
         <div class="valid-feedback">
         </div>
       </div>
       <div class="col-md-5 mb-3">
-        <label for="validationCustom04">Apellidos</label>
-        <input type="text" class="form-control" id="apellidos" required>
+        <label for="validationCustom01">Contacto</label>
+        <input type="text" class="form-control" id="contacto" required>
         <div class="valid-feedback">
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-3 mb-3">
-        <label for="validationCustom03">Genero</label>
-        <select id="genero" class="form-control">
-            <option></option>
-            <option>Femenino</option>
-            <option>Masculino</option>
-          </select>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationCustom04">Area</label>
-        <input type="text" class="form-control" id="area" required>
-        <div class="invalid-feedback">
+        <label for="validationCustom01">Celular</label>
+        <input type="text" class="form-control" id="celular" required>
+        <div class="valid-feedback">
         </div>
       </div>
       <div class="col-md-3 mb-3">
-        <label for="validationCustom05">Fotografia</label>
-        <form name="subida-imagenes" type="POST" enctype="multipart/formdata" >
-            <input type="file" name="imagen1" class="form" id="fotografia" required/>
-        </form>
+        <label for="validationCustom04">Email</label>
+        <input type="text" class="form-control" id="email" required>
+        <div class="invalid-feedback">
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01">Dirección</label>
+        <input type="text" class="form-control" id="direccion" required>
+        <div class="valid-feedback">
+        </div>
     </div>
-    <button class="btn btn-primary" type="submit" id="registrarv">Registrar</button>
+    <button class="btn btn-primary" type="submit" id="registrarc">Registrar</button>
     </div>
   </form>    
 
-  <button class="btn btn-primary" type="submit" id="btnVendedores">Ver Mis Vendedores</button>
+  <button class="btn btn-primary" type="submit" id="btnClientes">Ver Mis Clientes</button>
   </p>
   <!--botones de elimincación y actualización-->
   
@@ -105,11 +103,11 @@
     <thead>
       <tr id="td">
         <th scope="col">#</th>
-        <th scope="col" >Nombre</th>
-        <th scope="col">Apellidos</th>
-        <th scope="col">Genero</th>
-        <th scope="col">Area</th>
-        <th scope="col">Fotografia</th>
+        <th scope="col" >Nombre de la Empresa</th>
+        <th scope="col">Contacto</th>
+        <th scope="col">Celular</th>
+        <th scope="col">Email</th>
+        <th scope="col">Dirección</th>
         <th scope="col">Acciones</th>
         
       </tr>
@@ -120,7 +118,7 @@
 
   <a href="#" class="rainbow-button" target="blank_" alt="Rainbow"></a>
 
-  <script src="assets/js/vendedores.js"></script>
+  <script src="assets/js/clientes.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

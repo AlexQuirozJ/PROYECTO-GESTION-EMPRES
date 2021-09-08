@@ -8,13 +8,14 @@ Registrar.addEventListener('click', (e) => {
   const contacto = document.getElementById('contacto');
   const email = document.getElementById('email');
   const telefono = document.getElementById('telefono');
+  const producto = document.getElementById('producto');
 
   
-if (descripcion.value == '' , direccion.value == '', contacto.value == '' , email.value == '', telefono.value == '') {
-  alert("Por favor complete todos los campos");
+if (descripcion.value == '' , direccion.value == '', producto.value=='', contacto.value == '' , email.value == '', telefono.value == '') {
+  toastr["error"]("Por favor complete todos los campos!")
 }
   
-if (descripcion.value != '' && direccion.value != '' && contacto.value != '' && email.value != '' && telefono.value != '') {
+if (descripcion.value != '' && direccion.value != '' && producto.value!=''&& contacto.value != '' && email.value != '' && telefono.value != '') {
   
   toastr["success"]('El registro del proveedor ha sido exitoso', 'Exito')
 
@@ -25,7 +26,8 @@ if (descripcion.value != '' && direccion.value != '' && contacto.value != '' && 
         direccion: direccion.value,
         contacto: contacto.value,
         email: email.value,
-        telefono: telefono.value
+        telefono: telefono.value,
+        producto: producto.value
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -37,6 +39,7 @@ if (descripcion.value != '' && direccion.value != '' && contacto.value != '' && 
       contacto.value='';
       email.value='';
       telefono.value='';
+      producto.value='';
     });
   }
 });
@@ -67,6 +70,7 @@ const mostrarProducto = (proveedor) => {
       <td> ${proveedores.contacto}</td>
       <td> ${proveedores.email}</td>
       <td> ${proveedores.telefono}</td>
+      <td> ${proveedores.producto}</td>
       <td>
       <button type="button" class="btn btn-warning mr-1" id="editar" onclick="update(${proveedores.id})">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -133,6 +137,7 @@ async function eliminar(proveedoresId){
       <td> ${proveedores.contacto}</td>
       <td> ${proveedores.email}</td>
       <td> ${proveedores.telefono}</td>
+      <td> ${proveedores.producto}</td>
       <td>
       <button type="button" class="btn btn-warning" id="editar" onclick="update(${proveedores.id})">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">

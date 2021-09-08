@@ -14,7 +14,7 @@
   <title>ventas</title>
 </head>
 
-<body>
+<body onload="informacion(), informacion2(), informacion3()">
 
   <!--BARRA DE NAVEGACION-->
   <nav class="navbar navbar-expand-md navbar-light sticky-top border-primary border-bottom border-5" id="navbar">
@@ -25,10 +25,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto" id="items">
-
         <li class="nav-item">
-          <a class="nav-link" href="producto.html" style="color:beige">Crear Producto</a>
-        </li>
+            <a class="nav-link" href="Clientes.html" style="color:beige">Crear Clientes</a>
+          </li>
         <li class="nav-item">
           <a class="nav-link" href="Proveedor.html" style="color:beige">Crear Proveedor</a>
         </li>
@@ -36,13 +35,13 @@
           <a class="nav-link" href="vendedores.html" style="color:beige">Crear Vendedor</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="producto.html" style="color:beige">Entrada de Producto</a>
+          </li>
+        <li class="nav-item">
           <a class="nav-link" href="ventas.html" style="color:beige">Nueva Venta</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="loginvista.html" style="color:beige">Informe de Ventas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="loginvista.html" style="color:beige">Ventas</a>
         </li>
       </ul>
       <ul class="navbar-nav mr-6" id="sesion">
@@ -74,11 +73,10 @@
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationCustom03">Producto Vendido</label>
+        <div>
         <select class="custom-select" id="producto" required>
-          <option></option>
-          <option>LMU300</option>
-          <option>GV300W+</option>
         </select>
+      </div>
       </div>
       <div class="col-md-3 mb-3">
         <label for="validationCustom04">Status de Pago</label>
@@ -92,9 +90,6 @@
         <label for="validationCustom04">Vendedor</label>
         <select class="custom-select" id="vendedor" required>
           <div>
-            <option></option>
-            <option>Luis</option>
-            <option>Alex</option>
           </div>
         </select>
       </div>
@@ -107,10 +102,6 @@
       <div class="col-md-4 mb-3">
         <label for="validationCustom04">Cliente</label>
         <select class="custom-select" id="cliente" required>
-          <div>
-            <option>logitel</option>
-            <option>SIGA+</option>
-          </div>
         </select>
       </div>
       <button class="btn btn-primary" type="submit" id="registrarVenta">Registrar</button>
@@ -119,7 +110,7 @@
     </div>
   </form>    
 
-  <button class="btn btn-primary" type="submit" id="btnVentas">Ver Mis Productos</button>
+  <button class="btn btn-primary" type="submit" id="btnVentas">Ver Mis Ventas</button>
   </p>
   <!--botones de elimincación y actualización-->
   
@@ -136,7 +127,7 @@
         <th scope="col">Cantidad</th>
         <th scope="col">Cliente</th>
         <th scope="col">Total $</th>
-        
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody id="results" >

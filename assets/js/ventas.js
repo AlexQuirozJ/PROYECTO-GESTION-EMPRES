@@ -1,3 +1,61 @@
+//Funcion para traer los productos ya registrados
+function informacion(){
+  fetch('http://localhost:8080/productos')
+  .then(data => data.json())
+  .then(data => {
+    infoProductos = data;
+    mostrarInformacion(infoProductos)
+  
+});
+const mostrarInformacion = (infoProductos) => {
+const htmlString = infoProductos.map((productos) => {
+  return`
+  <option>${productos.descripcion}</option>
+   `;
+}).join('');;
+producto.innerHTML = htmlString;
+}};
+
+//Funcion para traer a los vendedores ya registrados
+function informacion2(){
+  fetch('http://localhost:8080/Vendedores')
+  .then(data => data.json())
+  .then(data => {
+    infoVendedores = data;
+    mostrarVendedores(infoVendedores)
+  
+});
+const mostrarVendedores = (infoVendedores) => {
+const htmlString = infoVendedores.map((vendedores) => {
+  return`
+  <option>${vendedores.nombre + " " + vendedores.apellidos}</option>
+   `;
+}).join('');;
+vendedor.innerHTML = htmlString;
+}};
+
+//Funcion para traer a los clientes ya registrados
+function informacion3(){
+  fetch('http://localhost:8080/clientes')
+  .then(data => data.json())
+  .then(data => {
+    infoClientes = data;
+    mostrarClientes(infoClientes)
+  
+});
+const mostrarClientes = (infoClientes) => {
+const htmlString = infoClientes.map((clientes) => {
+  return`
+  <option>${clientes.empresa}</option>
+   `;
+}).join('');;
+cliente.innerHTML = htmlString;
+}};
+
+
+
+
+//Funcion para registrar venta
 const Registrar= document.getElementById('registrarVenta');
 
 Registrar.addEventListener('click', (e) => {
@@ -13,7 +71,7 @@ Registrar.addEventListener('click', (e) => {
 
   
 if (descripcion.value == '' , producto.value == '', status.value == '' , vendedor.value == '', cantidadP.value == '', cliente.value =='', fecha.value=='') {
-  alert("Por favor complete todos los campos");
+  toastr["error"]("Por favor complete todos los campos!")
 }
   
 if (descripcion.value != '' && producto.value != '' && status.value != '' && vendedor.value != '' && cantidadP.value != '' && cliente.value!='' && fecha.value!= '') {
@@ -74,6 +132,7 @@ const mostrarVentas = (venta) => {
       <td> ${ventas.vendedor}</td>
       <td> ${ventas.cantidad}</td>
       <td> ${ventas.cliente}</td>
+      <td> ${ventas.cantidad * producto.precio}</td>
       <td>
       <button type="button" class="btn btn-warning mr-1" id="editar" onclick="update(${ventas.id})">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">

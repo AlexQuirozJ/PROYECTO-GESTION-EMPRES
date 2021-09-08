@@ -1,5 +1,5 @@
 //FUNCION PARA TRAER A LOS PROVEEDORES QUE YA ESTAN REGISTRADOS
-const proveedor= document.getElementById('proveedor')
+
 
 function proveedoresList(){
   fetch('http://localhost:8080/Proveedores')
@@ -15,7 +15,9 @@ const mostrarProveedores = (proveed) => {
 
 //RECUERDA QUE EL MAP REGRESA UN NUEVO ARREGLO, ES DECIR, EL API MANDA UN ARREGLO PERO EL MAP CREA UNO NUEVO Y DEBEMOS AJUSTARLO
 const htmlString = proveed.map((proveedores) => {
-  return`<option>${proveedores.descripcion}</option>
+  return`
+  <option></option>
+  <option>${proveedores.descripcion}</option>
    `;
   // retornas todo proveedor con el option al htmlstring
 }).join('');;
@@ -37,15 +39,18 @@ Registrar.addEventListener('click', (e) => {
   const codigo = document.getElementById('codigo');
   const tipo = document.getElementById('tipo');
   const precio = document.getElementById('precio');
+  const cantidad= document.getElementById('cantidad');
+  const fecha=document.getElementById('fecha');
 
   
-if (descripcion.value == '' , proveedor.value == '', codigo.value == '' , tipo.value == '', precio.value == '') {
-  alert("Por favor complete todos los campos");
-}
+  if (descripcion.value == '' , proveedor.value == '', codigo.value=='', tipo.value == '' , precio.value == '', cantidad.value == '', fecha.value=='') {
+    toastr["error"]("Por favor complete todos los campos!")
+  }
   
-if (descripcion.value != '' && proveedor.value != '' && codigo.value != '' && tipo.value != '' && precio.value != '') {
-  
-  toastr["success"]('El registro de su producto ha sido exitoso', 'Exito')
+if (descripcion.value != '' && proveedor.value != '' && codigo.value != '' && tipo.value != '' && precio.value != '' && cantidad!=''&& fecha!='') {
+
+
+  toastr["success"]('El registro de entrada ha sido exitoso', 'Exito')
 
     fetch('http://localhost:8080/productos', {
       method: 'POST',
@@ -54,11 +59,14 @@ if (descripcion.value != '' && proveedor.value != '' && codigo.value != '' && ti
         proveedor: proveedor.value,
         codigo: codigo.value,
         tipo: tipo.value,
-        precio: precio.value
+        precio: precio.value,
+        cantidad: cantidad.value,
+        fecha: fecha.value
+        
       }),
       headers: {
         'Content-Type': 'application/json',
-      },
+    },
     }).then((resp) => {
       console.log(resp);
       descripcion.value='';
@@ -66,9 +74,16 @@ if (descripcion.value != '' && proveedor.value != '' && codigo.value != '' && ti
       codigo.value='';
       tipo.value='';
       precio.value='';
+      cantidad.value='';
+      fecha.value='';
+        
     });
   }
-});
+} 
+
+);
+
+
 
 /*FUNCION PARA TRAER LOS DATOS POR FETCH Y ALOJARLOS EN TABLA */
 const btnProductos = document.getElementById('btnProductos');
@@ -84,6 +99,7 @@ btnProductos.addEventListener('click', () => {
     })
 });
 
+
 /*AQUÍ MAQUETEMOS EL HTML, MEDIANTE EL PARAMETRO productos que almacena el ARRAY de la DB*/
 const mostrarProducto = (productos) => {
 
@@ -93,9 +109,12 @@ const mostrarProducto = (productos) => {
       <td id="td1"> ${producto.id}</td>
       <td> ${producto.descripcion}</td>
       <td> ${producto.proveedor}</td>
-      <td> ${producto.tipo}</td>
-      <td> ${producto.precio}</td>
       <td> ${producto.codigo}</td>
+      <td> ${producto.tipo}</td>
+      <td> ${producto.cantidad}</td>
+      <td>$ ${producto.precio}</td>
+      <td>$${producto.cantidad * producto.precio}</td>
+      <td> ${producto.fecha}</td>
       <td>
       <button type="button" class="btn btn-warning mr-1" id="editar" onclick="update(${producto.id})">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -161,6 +180,9 @@ async function eliminar(productoId){
       <td> ${producto.tipo}</td>
       <td> ${producto.precio}</td>
       <td> ${producto.codigo}</td>
+      <td> ${producto.cantidad}</td>
+      <td>$${producto.cantidad * producto.precio}</td>
+      <td> ${producto.fecha}</td>
       <td>
       <button type="button" class="btn btn-warning" id="editar" onclick="update(${producto.id})">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">

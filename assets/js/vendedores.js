@@ -11,7 +11,7 @@ Registrar.addEventListener('click', (e) => {
 
   
 if (nombre.value == '' , apellidos.value == '', area.value == '' , genero.value == '', fotografia.value == '') {
-  alert("Por favor complete todos los campos");
+  toastr["error"]("Por favor complete todos los campos!")
 }
   
 if (nombre.value != '' && apellidos.value != '' && area.value != '' && genero.value != '' && fotografia.value != '') {
